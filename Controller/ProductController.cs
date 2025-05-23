@@ -1,11 +1,12 @@
-﻿using Npgsql;
+﻿using crud_project_winform.Model;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace crud_project_winform
+namespace crud_project_winform.Controller
 {
     public class ProductController
     {
@@ -46,11 +47,11 @@ namespace crud_project_winform
                 using (var con = Database.GetConnection())
                 {
                     con.Open();
-                    using (var cmd = new NpgsqlCommand(query,con))
+                    using (var cmd = new NpgsqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@nama_produk",produk.nama_produk);
-                        cmd.Parameters.AddWithValue("@harga",produk.harga);
-                        cmd.Parameters.AddWithValue("@deskripsi",produk.deskripsi);
+                        cmd.Parameters.AddWithValue("@nama_produk", produk.nama_produk);
+                        cmd.Parameters.AddWithValue("@harga", produk.harga);
+                        cmd.Parameters.AddWithValue("@deskripsi", produk.deskripsi);
                         cmd.ExecuteNonQuery();
 
                     }
@@ -62,12 +63,12 @@ namespace crud_project_winform
             catch (NpgsqlException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-               
+
             }
             finally
             {

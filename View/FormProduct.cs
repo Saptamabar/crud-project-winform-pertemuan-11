@@ -8,6 +8,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using crud_project_winform.Controller;
+using crud_project_winform.Model;
 
 namespace crud_project_winform
 {
@@ -17,6 +19,7 @@ namespace crud_project_winform
         {
             InitializeComponent();
         }
+        
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -43,8 +46,7 @@ namespace crud_project_winform
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ListProduct listproduct = new ListProduct();
-            listproduct.Show();
+            
         }
     }
 }

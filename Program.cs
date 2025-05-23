@@ -1,3 +1,5 @@
+using crud_project_winform.View;
+
 namespace crud_project_winform
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace crud_project_winform
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new ListProduct());
+            Application.Run(new Container());
         }
     }
 }
